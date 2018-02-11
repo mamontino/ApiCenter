@@ -70,7 +70,7 @@ class FCM
 
         $headers = array(
             'Content-Type: application/json',
-            'Authorization: key=' . FB_NEW_KEY
+            'Authorization: key=' . FB_KEY
         );
 
         $ch = curl_init();

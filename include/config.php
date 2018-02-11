@@ -37,5 +37,4 @@ define("DB_ERROR", "Ошибка подключения к базе данных
  */
 
 define('API_KEY', 'AAAA2UBtySo:APA91bGOxg0DNY9Ojz-BD0d4bUr-GukFBdvCtivWVjqZ8ppEHtl-BIwmINKD3R_');
-define('FB_API_URL', 'https://fcm.googleapis.com/fcm/send');
-define("FB_NEW_KEY", "AAAA2UBtySo:APA91bGOxg0DNY9Ojz-BD0d4bUr-GukFBdvCtivWVjqZ8ppEHtl-BIwmINKD3R_9AfguvNjJHac2AGHSjWhoVbpZ3JILBVm4gH2X48TwNHWv6uW-bWVkPbaIFPnhEw_ZczK1owGnhZAn");
+define("FB_KEY", "AAAA2UBtySo:APA91bGOxg0DNY9Ojz-BD0d4bUr-GukFBdvCtivWVjqZ8ppEHtl-BIwmINKD3R_9AfguvNjJHac2AGHSjWhoVbpZ3JILBVm4gH2X48TwNHWv6uW-bWVkPbaIFPnhEw_ZczK1owGnhZAn");

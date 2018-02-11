@@ -1,0 +1,919 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="1263b7ce-a404-4a0f-8423-086560afb629" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/include/DoctorOperation.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/include/UserOperation.php" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/include/DbConnect.php" afterPath="$PROJECT_DIR$/include/DbConnect.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/include/MhOperation.php" afterPath="$PROJECT_DIR$/include/MhOperation.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/include/VerifyOperation.php" afterPath="$PROJECT_DIR$/include/VerifyOperation.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/include/config.php" afterPath="$PROJECT_DIR$/include/config.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/fcm/FCM.php" afterPath="$PROJECT_DIR$/libs/fcm/FCM.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/fcm/Notification.php" afterPath="$PROJECT_DIR$/libs/fcm/Notification.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/v1/index.php" afterPath="$PROJECT_DIR$/v1/index.php" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_TABLE_DETAILS" value="true" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="config.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/include/config.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="680">
+              <caret line="40" column="0" lean-forward="true" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+              <folding>
+                <element signature="e#7#51#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DbConnect.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/include/DbConnect.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="579">
+              <caret line="35" column="34" lean-forward="true" selection-start-line="35" selection-start-column="34" selection-end-line="35" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MhOperation.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/include/MhOperation.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="78" column="0" lean-forward="true" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
+              <folding>
+                <element signature="e#7#35#0#PHP" expanded="false" />
+                <element signature="e#79#122#0#PHP" expanded="false" />
+                <element signature="n#__construct#0;n#mhOperation#0;n#!!top" expanded="false" />
+                <element signature="e#294#368#0#PHP" expanded="false" />
+                <element signature="n#getAllDoctors#0;n#mhOperation#0;n#!!top" expanded="false" />
+                <element signature="e#1407#1492#0#PHP" expanded="false" />
+                <element signature="n#getDoctorById#0;n#mhOperation#0;n#!!top" expanded="false" />
+                <element signature="e#2086#2187#0#PHP" expanded="false" />
+                <element signature="n#getDoctorByService#0;n#mhOperation#0;n#!!top" expanded="false" />
+                <element signature="e#3196#3304#0#PHP" expanded="false" />
+                <element signature="n#getDoctorBySpec#0;n#mhOperation#0;n#!!top" expanded="false" />
+                <element signature="e#4322#4400#0#PHP" expanded="false" />
+                <element signature="n#getAllSpecialty#0;n#mhOperation#0;n#!!top" expanded="false" />
+                <element signature="e#5050#5160#0#PHP" expanded="false" />
+                <element signature="n#getSpecialtyByDoctor#0;n#mhOperation#0;n#!!top" expanded="false" />
+                <element signature="e#5872#5941#0#PHP" expanded="false" />
+                <element signature="n#getAllService#0;n#mhOperation#0;n#!!top" expanded="false" />
+                <element signature="e#6730#6829#0#PHP" expanded="false" />
+                <element signature="n#getServiceByDoctor#0;n#mhOperation#0;n#!!top" expanded="false" />
+                <element signature="e#7708#7810#0#PHP" expanded="false" />
+                <element signature="n#getServiceBySpecialty#0;n#mhOperation#0;n#!!top" expanded="false" />
+                <element signature="e#8676#8833#0#PHP" expanded="false" />
+                <element signature="n#getRecordByDate#0;n#mhOperation#0;n#!!top" expanded="false" />
+                <element signature="e#11536#11712#0#PHP" expanded="false" />
+                <element signature="n#recordClient#0;n#mhOperation#0;n#!!top" expanded="false" />
+                <element signature="e#17335#17441#0#PHP" expanded="false" />
+                <element signature="n#getVisitsByClient#0;n#mhOperation#0;n#!!top" expanded="false" />
+                <element signature="e#18504#18568#0#PHP" expanded="false" />
+                <element signature="n#getCurrentDate#0;n#mhOperation#0;n#!!top" expanded="false" />
+                <marker date="1518344777956" expanded="true" signature="448:593" ph="SELECT d.`id... doctors" />
+                <marker date="1518344777956" expanded="true" signature="448:594" ph="SELECT d.id,... сотрудники_инф" />
+                <marker date="1518344777956" expanded="true" signature="448:598" ph="SELECT d.id,... сотрудники_инф" />
+                <marker date="1518344777956" expanded="true" signature="1108:1159" ph="SELECT Специ... сотрудники_инф" />
+                <marker date="1518344777956" expanded="true" signature="1108:1160" ph="SELECT Специ... специальности" />
+                <marker date="1518344777956" expanded="true" signature="1582:1640" ph="SELECT d.id,... сотрудники_инф" />
+                <marker date="1518344777956" expanded="true" signature="2282:2451" ph="SELECT d.id,... сотрудники_инф" />
+                <marker date="1518344777956" expanded="true" signature="2282:2457" ph="SELECT d.id,... сотрудники_инф" />
+                <marker date="1518344777956" expanded="true" signature="2895:2947" ph="SELECT Специ... специальности" />
+                <marker date="1518344777956" expanded="true" signature="3394:3449" ph="SELECT * FRO... doctors" />
+                <marker date="1518344777956" expanded="true" signature="4482:4525" ph="SELECT id, i... specialty" />
+                <marker date="1518344777956" expanded="true" signature="5257:5434" ph="SELECT s.id,... service_doctor" />
+                <marker date="1518344777956" expanded="true" signature="5257:5443" ph="SELECT d.id_... сотрудники_специальность" />
+                <marker date="1518344777956" expanded="true" signature="6021:6046" ph="SELECT * FRO... прейскурант" />
+                <marker date="1518344777956" expanded="true" signature="6924:7100" ph="SELECT * FRO... прейскурант" />
+                <marker date="1518344777956" expanded="true" signature="7906:7950" ph="SELECT * FRO... price" />
+                <marker date="1518344777956" expanded="true" signature="8938:9115" ph="SELECT `Врем... raspisanie_sotr" />
+                <marker date="1518344777956" expanded="true" signature="11532:18989" ph="..." />
+                <marker date="1518344777956" expanded="true" signature="11851:12022" ph="SELECT COUNT... raspisanie_sotr" />
+                <marker date="1518344777956" expanded="true" signature="12257:12415" ph="SELECT `id_к... raspisanie_sotr" />
+                <marker date="1518344777956" expanded="true" signature="13224:13479" ph="INSERT INTO `raspisanie_sotr`... " />
+                <marker date="1518344777956" expanded="true" signature="13773:14056" ph="UPDATE `rasp... " />
+                <marker date="1518344777956" expanded="true" signature="14468:14736" ph="SELECT COUNT... raspisanie_sotr" />
+                <marker date="1518344777956" expanded="true" signature="15094:15412" ph="INSERT INTO `raspisanie_sotr`... " />
+                <marker date="1518344777956" expanded="true" signature="15691:15855" ph="SELECT `Врем... raspisanie_sotr" />
+                <marker date="1518344777956" expanded="true" signature="16969:17126" ph="DELETE FROM " />
+                <marker date="1518344777956" expanded="true" signature="17536:17584" ph="SELECT * FRO... прейскурант" />
+                <marker date="1518344777956" expanded="true" signature="17536:17600" ph="SELECT * FRO... raspisanie_sotr" />
+                <marker date="1518344777956" expanded="true" signature="17536:17607" ph="SELECT * FRO... raspisanie_sotr" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="VerifyOperation.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/include/VerifyOperation.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="17" column="22" lean-forward="true" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/v1/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-187">
+              <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+              <folding>
+                <element signature="e#194#281#0#PHP" expanded="false" />
+                <element signature="n#echoResponse#0;n#!!top" expanded="false" />
+                <element signature="e#519#639#0#PHP" expanded="false" />
+                <element signature="n#verifyRequiredParams#0;n#!!top" expanded="false" />
+                <element signature="e#1501#1540#0#PHP" expanded="false" />
+                <element signature="n#authenticate#0;n#!!top" expanded="false" />
+                <element signature="e#2305#2455#0#PHP" expanded="false" />
+                <element signature="e#2496#2863#1#PHP" expanded="false" />
+                <element signature="e#2867#3062#0#PHP" expanded="false" />
+                <element signature="e#3121#3654#1#PHP" expanded="false" />
+                <element signature="e#3658#3816#0#PHP" expanded="false" />
+                <element signature="e#3866#4231#1#PHP" expanded="false" />
+                <element signature="e#4235#4429#0#PHP" expanded="false" />
+                <element signature="e#4488#4880#1#PHP" expanded="false" />
+                <element signature="e#4884#5078#0#PHP" expanded="false" />
+                <element signature="e#5137#5520#1#PHP" expanded="false" />
+                <element signature="e#5524#5683#0#PHP" expanded="false" />
+                <element signature="e#5723#6088#1#PHP" expanded="false" />
+                <element signature="e#6092#6282#0#PHP" expanded="false" />
+                <element signature="e#6340#6871#1#PHP" expanded="false" />
+                <element signature="e#6875#7064#0#PHP" expanded="false" />
+                <element signature="e#7123#7512#1#PHP" expanded="false" />
+                <element signature="e#7516#7701#0#PHP" expanded="false" />
+                <element signature="e#7748#8133#1#PHP" expanded="false" />
+                <element signature="e#8137#8451#0#PHP" expanded="false" />
+                <element signature="e#8521#10157#1#PHP" expanded="false" />
+                <element signature="e#10161#10505#0#PHP" expanded="false" />
+                <element signature="e#10588#12374#1#PHP" expanded="false" />
+                <element signature="e#12378#12522#0#PHP" expanded="false" />
+                <element signature="e#12561#13360#1#PHP" expanded="false" />
+                <element signature="e#13364#13524#0#PHP" expanded="false" />
+                <element signature="e#13560#14044#1#PHP" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".htaccess" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/v1/.htaccess">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FCM.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/libs/fcm/FCM.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Notification.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/libs/fcm/Notification.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="22" column="5" lean-forward="false" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Push.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/libs/fcm/Push.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="0">
+                <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                <folding />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>price</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/libs/fcm/Notification.php" />
+        <option value="$PROJECT_DIR$/include/DoctorOperation.php" />
+        <option value="$PROJECT_DIR$/include/UserOperation.php" />
+        <option value="$PROJECT_DIR$/include/DbConnect.php" />
+        <option value="$PROJECT_DIR$/include/config.php" />
+        <option value="$PROJECT_DIR$/include/MhOperation.php" />
+        <option value="$PROJECT_DIR$/include/VerifyOperation.php" />
+        <option value="$PROJECT_DIR$/v1/index.php" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1549" />
+    <option name="height" value="916" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scratches" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ApiCenter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ApiCenter" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ApiCenter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ApiCenter" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="v1" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ApiCenter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ApiCenter" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="include" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="settings.editor.selected.configurable" value="editor.preferences.appearance" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="ignore_missing_gitignore" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Studio\Projects\ApiCenter" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="CodeceptionConfigurationType" factoryName="Codeception">
+      <PhpTestRunnerSettings />
+      <method />
+    </configuration>
+    <configuration default="true" type="GoApplicationRunConfiguration" factoryName="Go Application">
+      <module name="" />
+      <working_directory value="$PROJECT_DIR$" />
+      <go_parameters value="-i" />
+      <filePath value="$PROJECT_DIR$" />
+      <kind value="FILE" />
+      <method />
+    </configuration>
+    <configuration default="true" type="GoRunFileConfiguration" factoryName="Go Single File">
+      <module name="" />
+      <working_directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <method />
+    </configuration>
+    <configuration default="true" type="GoTestRunConfiguration" factoryName="Go Test">
+      <module name="" />
+      <working_directory value="$PROJECT_DIR$" />
+      <go_parameters value="-i" />
+      <framework value="gotest" />
+      <kind value="DIRECTORY" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerJest" factoryName="Jest">
+      <node-interpreter value="project" />
+      <working-dir value="" />
+      <envs />
+      <scope-kind value="ALL" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
+      <config-file value="" />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="project" working-dir="">
+      <method />
+    </configuration>
+    <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpBehatConfigurationType" factoryName="Behat">
+      <BehatRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpSpecConfigurationType" factoryName="PHPSpec">
+      <PhpTestRunnerSettings />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run" />
+      <scripts />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="mocha-javascript-test-runner" factoryName="Mocha">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <working-directory />
+      <pass-parent-env>true</pass-parent-env>
+      <envs />
+      <ui />
+      <extra-mocha-options />
+      <test-kind>DIRECTORY</test-kind>
+      <test-directory />
+      <recursive>false</recursive>
+      <method />
+    </configuration>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1263b7ce-a404-4a0f-8423-086560afb629" name="Default" comment="" />
+      <created>1517234569086</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1517234569086</updated>
+      <workItem from="1517234571704" duration="1904000" />
+      <workItem from="1517237386696" duration="2909000" />
+      <workItem from="1518325568115" duration="15806000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="20619000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1549" height="916" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="DB Browser" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="DB Execution Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32950193" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13297515" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23787062" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32950193" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="processedProjectFiles" value="true" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/include/MhOperation.php</url>
+          <line>95</line>
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="1" />
+    </breakpoint-manager>
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/include/config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding>
+            <element signature="e#7#51#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/DbConnect.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/DoctorOperation.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3655">
+          <caret line="215" column="63" lean-forward="false" selection-start-line="215" selection-start-column="52" selection-end-line="215" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/UserOperation.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="629">
+          <caret line="37" column="28" lean-forward="true" selection-start-line="37" selection-start-column="28" selection-end-line="37" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/VerifyOperation.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="48" lean-forward="false" selection-start-line="14" selection-start-column="48" selection-end-line="14" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/MhOperation.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="10557">
+          <caret line="621" column="49" lean-forward="true" selection-start-line="621" selection-start-column="49" selection-end-line="621" selection-end-column="49" />
+          <folding>
+            <element signature="e#7#35#0#PHP" expanded="false" />
+            <element signature="e#79#122#0#PHP" expanded="false" />
+            <element signature="n#__construct#0;n#mhOperation#0;n#!!top" expanded="false" />
+            <element signature="e#294#368#0#PHP" expanded="false" />
+            <element signature="n#getAllDoctors#0;n#mhOperation#0;n#!!top" expanded="false" />
+            <element signature="e#1407#1492#0#PHP" expanded="false" />
+            <element signature="n#getDoctorById#0;n#mhOperation#0;n#!!top" expanded="false" />
+            <element signature="e#2086#2187#0#PHP" expanded="false" />
+            <element signature="n#getDoctorByService#0;n#mhOperation#0;n#!!top" expanded="false" />
+            <element signature="e#3196#3304#0#PHP" expanded="false" />
+            <element signature="n#getDoctorBySpec#0;n#mhOperation#0;n#!!top" expanded="false" />
+            <element signature="e#4322#4400#0#PHP" expanded="false" />
+            <element signature="n#getAllSpecialty#0;n#mhOperation#0;n#!!top" expanded="false" />
+            <element signature="e#5050#5160#0#PHP" expanded="false" />
+            <element signature="n#getSpecialtyByDoctor#0;n#mhOperation#0;n#!!top" expanded="false" />
+            <element signature="e#5872#5941#0#PHP" expanded="false" />
+            <element signature="n#getAllService#0;n#mhOperation#0;n#!!top" expanded="false" />
+            <element signature="e#6730#6829#0#PHP" expanded="false" />
+            <element signature="n#getServiceByDoctor#0;n#mhOperation#0;n#!!top" expanded="false" />
+            <element signature="e#7708#7810#0#PHP" expanded="false" />
+            <element signature="n#getServiceBySpecialty#0;n#mhOperation#0;n#!!top" expanded="false" />
+            <element signature="e#8676#8833#0#PHP" expanded="false" />
+            <element signature="n#getRecordByDate#0;n#mhOperation#0;n#!!top" expanded="false" />
+            <element signature="e#11536#11712#0#PHP" expanded="false" />
+            <element signature="n#recordClient#0;n#mhOperation#0;n#!!top" expanded="false" />
+            <element signature="e#17335#17441#0#PHP" expanded="false" />
+            <element signature="n#getVisitsByClient#0;n#mhOperation#0;n#!!top" expanded="false" />
+            <element signature="e#18504#18568#0#PHP" expanded="false" />
+            <element signature="n#getCurrentDate#0;n#mhOperation#0;n#!!top" expanded="false" />
+            <marker date="1518344777956" expanded="true" signature="448:593" ph="SELECT d.`id... doctors" />
+            <marker date="1518344777956" expanded="true" signature="448:594" ph="SELECT d.id,... сотрудники_инф" />
+            <marker date="1518344777956" expanded="true" signature="448:598" ph="SELECT d.id,... сотрудники_инф" />
+            <marker date="1518344777956" expanded="true" signature="1108:1159" ph="SELECT Специ... сотрудники_инф" />
+            <marker date="1518344777956" expanded="true" signature="1108:1160" ph="SELECT Специ... специальности" />
+            <marker date="1518344777956" expanded="true" signature="1582:1640" ph="SELECT d.id,... сотрудники_инф" />
+            <marker date="1518344777956" expanded="true" signature="2282:2451" ph="SELECT d.id,... сотрудники_инф" />
+            <marker date="1518344777956" expanded="true" signature="2282:2457" ph="SELECT d.id,... сотрудники_инф" />
+            <marker date="1518344777956" expanded="true" signature="2895:2947" ph="SELECT Специ... специальности" />
+            <marker date="1518344777956" expanded="true" signature="3394:3449" ph="SELECT * FRO... doctors" />
+            <marker date="1518344777956" expanded="true" signature="4482:4525" ph="SELECT id, i... specialty" />
+            <marker date="1518344777956" expanded="true" signature="5257:5434" ph="SELECT s.id,... service_doctor" />
+            <marker date="1518344777956" expanded="true" signature="5257:5443" ph="SELECT d.id_... сотрудники_специальность" />
+            <marker date="1518344777956" expanded="true" signature="6021:6046" ph="SELECT * FRO... прейскурант" />
+            <marker date="1518344777956" expanded="true" signature="6924:7100" ph="SELECT * FRO... прейскурант" />
+            <marker date="1518344777956" expanded="true" signature="7906:7950" ph="SELECT * FRO... price" />
+            <marker date="1518344777956" expanded="true" signature="8938:9115" ph="SELECT `Врем... raspisanie_sotr" />
+            <marker date="1518344777956" expanded="true" signature="11532:18989" ph="..." />
+            <marker date="1518344777956" expanded="true" signature="11851:12022" ph="SELECT COUNT... raspisanie_sotr" />
+            <marker date="1518344777956" expanded="true" signature="12257:12415" ph="SELECT `id_к... raspisanie_sotr" />
+            <marker date="1518344777956" expanded="true" signature="13224:13479" ph="INSERT INTO `raspisanie_sotr`... " />
+            <marker date="1518344777956" expanded="true" signature="13773:14056" ph="UPDATE `rasp... " />
+            <marker date="1518344777956" expanded="true" signature="14468:14736" ph="SELECT COUNT... raspisanie_sotr" />
+            <marker date="1518344777956" expanded="true" signature="15094:15412" ph="INSERT INTO `raspisanie_sotr`... " />
+            <marker date="1518344777956" expanded="true" signature="15691:15855" ph="SELECT `Врем... raspisanie_sotr" />
+            <marker date="1518344777956" expanded="true" signature="16969:17126" ph="DELETE FROM " />
+            <marker date="1518344777956" expanded="true" signature="17536:17584" ph="SELECT * FRO... прейскурант" />
+            <marker date="1518344777956" expanded="true" signature="17536:17600" ph="SELECT * FRO... raspisanie_sotr" />
+            <marker date="1518344777956" expanded="true" signature="17536:17607" ph="SELECT * FRO... raspisanie_sotr" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding>
+            <element signature="e#7#51#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/DbConnect.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/DoctorOperation.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3655">
+          <caret line="215" column="63" lean-forward="false" selection-start-line="215" selection-start-column="52" selection-end-line="215" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/MhOperation.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="10489">
+          <caret line="617" column="41" lean-forward="true" selection-start-line="617" selection-start-column="41" selection-end-line="617" selection-end-column="41" />
+          <folding>
+            <element signature="e#7#35#0#PHP" expanded="false" />
+            <element signature="e#79#122#0#PHP" expanded="false" />
+            <element signature="n#__construct#0;n#mhOperation#0;n#!!top" expanded="false" />
+            <element signature="e#294#368#0#PHP" expanded="false" />
+            <element signature="n#getAllDoctors#0;n#mhOperation#0;n#!!top" expanded="false" />
+            <element signature="e#1407#1492#0#PHP" expanded="false" />
+            <element signature="n#getDoctorById#0;n#mhOperation#0;n#!!top" expanded="false" />
+            <element signature="e#2086#2187#0#PHP" expanded="false" />
+            <element signature="n#getDoctorByService#0;n#mhOperation#0;n#!!top" expanded="false" />
+            <element signature="e#3196#3304#0#PHP" expanded="false" />
+            <element signature="n#getDoctorBySpec#0;n#mhOperation#0;n#!!top" expanded="false" />
+            <element signature="e#4322#4400#0#PHP" expanded="false" />
+            <element signature="n#getAllSpecialty#0;n#mhOperation#0;n#!!top" expanded="false" />
+            <element signature="e#5050#5160#0#PHP" expanded="false" />
+            <element signature="n#getSpecialtyByDoctor#0;n#mhOperation#0;n#!!top" expanded="false" />
+            <element signature="e#5872#5941#0#PHP" expanded="false" />
+            <element signature="n#getAllService#0;n#mhOperation#0;n#!!top" expanded="false" />
+            <element signature="e#6730#6829#0#PHP" expanded="false" />
+            <element signature="n#getServiceByDoctor#0;n#mhOperation#0;n#!!top" expanded="false" />
+            <element signature="e#7708#7810#0#PHP" expanded="false" />
+            <element signature="n#getServiceBySpecialty#0;n#mhOperation#0;n#!!top" expanded="false" />
+            <element signature="e#8676#8833#0#PHP" expanded="false" />
+            <element signature="n#getRecordByDate#0;n#mhOperation#0;n#!!top" expanded="false" />
+            <element signature="e#11536#11712#0#PHP" expanded="false" />
+            <element signature="n#recordClient#0;n#mhOperation#0;n#!!top" expanded="false" />
+            <element signature="e#17335#17441#0#PHP" expanded="false" />
+            <element signature="n#getVisitsByClient#0;n#mhOperation#0;n#!!top" expanded="false" />
+            <element signature="e#18504#18568#0#PHP" expanded="false" />
+            <element signature="n#getCurrentDate#0;n#mhOperation#0;n#!!top" expanded="false" />
+            <marker date="1518344777956" expanded="true" signature="448:593" ph="SELECT d.`id... doctors" />
+            <marker date="1518344777956" expanded="true" signature="448:594" ph="SELECT d.id,... сотрудники_инф" />
+            <marker date="1518344777956" expanded="true" signature="448:598" ph="SELECT d.id,... сотрудники_инф" />
+            <marker date="1518344777956" expanded="true" signature="1108:1159" ph="SELECT Специ... сотрудники_инф" />
+            <marker date="1518344777956" expanded="true" signature="1108:1160" ph="SELECT Специ... специальности" />
+            <marker date="1518344777956" expanded="true" signature="1582:1640" ph="SELECT d.id,... сотрудники_инф" />
+            <marker date="1518344777956" expanded="true" signature="2282:2451" ph="SELECT d.id,... сотрудники_инф" />
+            <marker date="1518344777956" expanded="true" signature="2282:2457" ph="SELECT d.id,... сотрудники_инф" />
+            <marker date="1518344777956" expanded="true" signature="2895:2947" ph="SELECT Специ... специальности" />
+            <marker date="1518344777956" expanded="true" signature="3394:3449" ph="SELECT * FRO... doctors" />
+            <marker date="1518344777956" expanded="true" signature="4482:4525" ph="SELECT id, i... specialty" />
+            <marker date="1518344777956" expanded="true" signature="5257:5434" ph="SELECT s.id,... service_doctor" />
+            <marker date="1518344777956" expanded="true" signature="5257:5443" ph="SELECT d.id_... сотрудники_специальность" />
+            <marker date="1518344777956" expanded="true" signature="6021:6046" ph="SELECT * FRO... прейскурант" />
+            <marker date="1518344777956" expanded="true" signature="6924:7100" ph="SELECT * FRO... прейскурант" />
+            <marker date="1518344777956" expanded="true" signature="7906:7950" ph="SELECT * FRO... price" />
+            <marker date="1518344777956" expanded="true" signature="8938:9115" ph="SELECT `Врем... raspisanie_sotr" />
+            <marker date="1518344777956" expanded="true" signature="11532:18989" ph="..." />
+            <marker date="1518344777956" expanded="true" signature="11851:12022" ph="SELECT COUNT... raspisanie_sotr" />
+            <marker date="1518344777956" expanded="true" signature="12257:12415" ph="SELECT `id_к... raspisanie_sotr" />
+            <marker date="1518344777956" expanded="true" signature="13224:13479" ph="INSERT INTO `raspisanie_sotr`... " />
+            <marker date="1518344777956" expanded="true" signature="13773:14056" ph="UPDATE `rasp... " />
+            <marker date="1518344777956" expanded="true" signature="14468:14736" ph="SELECT COUNT... raspisanie_sotr" />
+            <marker date="1518344777956" expanded="true" signature="15094:15412" ph="INSERT INTO `raspisanie_sotr`... " />
+            <marker date="1518344777956" expanded="true" signature="15691:15855" ph="SELECT `Врем... raspisanie_sotr" />
+            <marker date="1518344777956" expanded="true" signature="16969:17126" ph="DELETE FROM " />
+            <marker date="1518344777956" expanded="true" signature="17536:17584" ph="SELECT * FRO... прейскурант" />
+            <marker date="1518344777956" expanded="true" signature="17536:17600" ph="SELECT * FRO... raspisanie_sotr" />
+            <marker date="1518344777956" expanded="true" signature="17536:17607" ph="SELECT * FRO... raspisanie_sotr" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/VerifyOperation.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="48" lean-forward="true" selection-start-line="14" selection-start-column="48" selection-end-line="14" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/UserOperation.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="72" lean-forward="true" selection-start-line="14" selection-start-column="72" selection-end-line="14" selection-end-column="72" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/fcm/FCM.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/fcm/Notification.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="5" lean-forward="false" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/fcm/Push.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="0">
+            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/DoctorOperation.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="1" lean-forward="false" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/UserOperation.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="8" lean-forward="true" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/v1/.htaccess">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="680">
+          <caret line="40" column="0" lean-forward="true" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+          <folding>
+            <element signature="e#7#51#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/DbConnect.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="579">
+          <caret line="35" column="34" lean-forward="true" selection-start-line="35" selection-start-column="34" selection-end-line="35" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/VerifyOperation.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="22" lean-forward="true" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/MhOperation.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="78" column="0" lean-forward="true" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
+          <folding>
+            <element signature="e#7#35#0#PHP" expanded="false" />
+            <element signature="e#79#122#0#PHP" expanded="false" />
+            <element signature="n#__construct#0;n#mhOperation#0;n#!!top" expanded="false" />
+            <element signature="e#294#368#0#PHP" expanded="false" />
+            <element signature="n#getAllDoctors#0;n#mhOperation#0;n#!!top" expanded="false" />
+            <element signature="e#1407#1492#0#PHP" expanded="false" />
+            <element signature="n#getDoctorById#0;n#mhOperation#0;n#!!top" expanded="false" />
+            <element signature="e#2086#2187#0#PHP" expanded="false" />
+            <element signature="n#getDoctorByService#0;n#mhOperation#0;n#!!top" expanded="false" />
+            <element signature="e#3196#3304#0#PHP" expanded="false" />
+            <element signature="n#getDoctorBySpec#0;n#mhOperation#0;n#!!top" expanded="false" />
+            <element signature="e#4322#4400#0#PHP" expanded="false" />
+            <element signature="n#getAllSpecialty#0;n#mhOperation#0;n#!!top" expanded="false" />
+            <element signature="e#5050#5160#0#PHP" expanded="false" />
+            <element signature="n#getSpecialtyByDoctor#0;n#mhOperation#0;n#!!top" expanded="false" />
+            <element signature="e#5872#5941#0#PHP" expanded="false" />
+            <element signature="n#getAllService#0;n#mhOperation#0;n#!!top" expanded="false" />
+            <element signature="e#6730#6829#0#PHP" expanded="false" />
+            <element signature="n#getServiceByDoctor#0;n#mhOperation#0;n#!!top" expanded="false" />
+            <element signature="e#7708#7810#0#PHP" expanded="false" />
+            <element signature="n#getServiceBySpecialty#0;n#mhOperation#0;n#!!top" expanded="false" />
+            <element signature="e#8676#8833#0#PHP" expanded="false" />
+            <element signature="n#getRecordByDate#0;n#mhOperation#0;n#!!top" expanded="false" />
+            <element signature="e#11536#11712#0#PHP" expanded="false" />
+            <element signature="n#recordClient#0;n#mhOperation#0;n#!!top" expanded="false" />
+            <element signature="e#17335#17441#0#PHP" expanded="false" />
+            <element signature="n#getVisitsByClient#0;n#mhOperation#0;n#!!top" expanded="false" />
+            <element signature="e#18504#18568#0#PHP" expanded="false" />
+            <element signature="n#getCurrentDate#0;n#mhOperation#0;n#!!top" expanded="false" />
+            <marker date="1518344777956" expanded="true" signature="448:593" ph="SELECT d.`id... doctors" />
+            <marker date="1518344777956" expanded="true" signature="448:594" ph="SELECT d.id,... сотрудники_инф" />
+            <marker date="1518344777956" expanded="true" signature="448:598" ph="SELECT d.id,... сотрудники_инф" />
+            <marker date="1518344777956" expanded="true" signature="1108:1159" ph="SELECT Специ... сотрудники_инф" />
+            <marker date="1518344777956" expanded="true" signature="1108:1160" ph="SELECT Специ... специальности" />
+            <marker date="1518344777956" expanded="true" signature="1582:1640" ph="SELECT d.id,... сотрудники_инф" />
+            <marker date="1518344777956" expanded="true" signature="2282:2451" ph="SELECT d.id,... сотрудники_инф" />
+            <marker date="1518344777956" expanded="true" signature="2282:2457" ph="SELECT d.id,... сотрудники_инф" />
+            <marker date="1518344777956" expanded="true" signature="2895:2947" ph="SELECT Специ... специальности" />
+            <marker date="1518344777956" expanded="true" signature="3394:3449" ph="SELECT * FRO... doctors" />
+            <marker date="1518344777956" expanded="true" signature="4482:4525" ph="SELECT id, i... specialty" />
+            <marker date="1518344777956" expanded="true" signature="5257:5434" ph="SELECT s.id,... service_doctor" />
+            <marker date="1518344777956" expanded="true" signature="5257:5443" ph="SELECT d.id_... сотрудники_специальность" />
+            <marker date="1518344777956" expanded="true" signature="6021:6046" ph="SELECT * FRO... прейскурант" />
+            <marker date="1518344777956" expanded="true" signature="6924:7100" ph="SELECT * FRO... прейскурант" />
+            <marker date="1518344777956" expanded="true" signature="7906:7950" ph="SELECT * FRO... price" />
+            <marker date="1518344777956" expanded="true" signature="8938:9115" ph="SELECT `Врем... raspisanie_sotr" />
+            <marker date="1518344777956" expanded="true" signature="11532:18989" ph="..." />
+            <marker date="1518344777956" expanded="true" signature="11851:12022" ph="SELECT COUNT... raspisanie_sotr" />
+            <marker date="1518344777956" expanded="true" signature="12257:12415" ph="SELECT `id_к... raspisanie_sotr" />
+            <marker date="1518344777956" expanded="true" signature="13224:13479" ph="INSERT INTO `raspisanie_sotr`... " />
+            <marker date="1518344777956" expanded="true" signature="13773:14056" ph="UPDATE `rasp... " />
+            <marker date="1518344777956" expanded="true" signature="14468:14736" ph="SELECT COUNT... raspisanie_sotr" />
+            <marker date="1518344777956" expanded="true" signature="15094:15412" ph="INSERT INTO `raspisanie_sotr`... " />
+            <marker date="1518344777956" expanded="true" signature="15691:15855" ph="SELECT `Врем... raspisanie_sotr" />
+            <marker date="1518344777956" expanded="true" signature="16969:17126" ph="DELETE FROM " />
+            <marker date="1518344777956" expanded="true" signature="17536:17584" ph="SELECT * FRO... прейскурант" />
+            <marker date="1518344777956" expanded="true" signature="17536:17600" ph="SELECT * FRO... raspisanie_sotr" />
+            <marker date="1518344777956" expanded="true" signature="17536:17607" ph="SELECT * FRO... raspisanie_sotr" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/v1/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-187">
+          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding>
+            <element signature="e#194#281#0#PHP" expanded="false" />
+            <element signature="n#echoResponse#0;n#!!top" expanded="false" />
+            <element signature="e#519#639#0#PHP" expanded="false" />
+            <element signature="n#verifyRequiredParams#0;n#!!top" expanded="false" />
+            <element signature="e#1501#1540#0#PHP" expanded="false" />
+            <element signature="n#authenticate#0;n#!!top" expanded="false" />
+            <element signature="e#2305#2455#0#PHP" expanded="false" />
+            <element signature="e#2496#2863#1#PHP" expanded="false" />
+            <element signature="e#2867#3062#0#PHP" expanded="false" />
+            <element signature="e#3121#3654#1#PHP" expanded="false" />
+            <element signature="e#3658#3816#0#PHP" expanded="false" />
+            <element signature="e#3866#4231#1#PHP" expanded="false" />
+            <element signature="e#4235#4429#0#PHP" expanded="false" />
+            <element signature="e#4488#4880#1#PHP" expanded="false" />
+            <element signature="e#4884#5078#0#PHP" expanded="false" />
+            <element signature="e#5137#5520#1#PHP" expanded="false" />
+            <element signature="e#5524#5683#0#PHP" expanded="false" />
+            <element signature="e#5723#6088#1#PHP" expanded="false" />
+            <element signature="e#6092#6282#0#PHP" expanded="false" />
+            <element signature="e#6340#6871#1#PHP" expanded="false" />
+            <element signature="e#6875#7064#0#PHP" expanded="false" />
+            <element signature="e#7123#7512#1#PHP" expanded="false" />
+            <element signature="e#7516#7701#0#PHP" expanded="false" />
+            <element signature="e#7748#8133#1#PHP" expanded="false" />
+            <element signature="e#8137#8451#0#PHP" expanded="false" />
+            <element signature="e#8521#10157#1#PHP" expanded="false" />
+            <element signature="e#10161#10505#0#PHP" expanded="false" />
+            <element signature="e#10588#12374#1#PHP" expanded="false" />
+            <element signature="e#12378#12522#0#PHP" expanded="false" />
+            <element signature="e#12561#13360#1#PHP" expanded="false" />
+            <element signature="e#13364#13524#0#PHP" expanded="false" />
+            <element signature="e#13560#14044#1#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

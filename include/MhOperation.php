@@ -5,9 +5,6 @@
  */
 class mhOperation
 {
-    /**
-     * @var mysqli|null
-     */
     private $con;
 
     /**
@@ -20,108 +17,75 @@ class mhOperation
         $this->con = $db->connect();
     }
 
-//    /**
-//     * Проверка на корректность имени пользователя для доктора
-//     * @param $username
-//     * @return bool
-//     */
-//    public function getUsername($username)
-//    {
-//        $stmt = $this->con->prepare("SELECT * FROM doctors WHERE username =?");
-//        $stmt->bind_param("s", $username);
-//        $stmt->execute();
-//        $user = $stmt->get_result()->fetch_assoc();
-//        $stmt->close();
-//
-//        if ($user['username'] == NULL)
-//        {
-//            return false;
-//        } else
-//        {
-//            return true;
-//        }
-//    }
+    /**
+     * Получение всех сотрудников клиники
+     * @return array
+     */
+    public function getAllDoctors()
+    {
+        $stmt = $this->con->prepare("SELECT d.id, d.ФИО, s.id_спец
+                                            FROM сотрудники_инф AS d, сотрудники_сциальность AS s WHERE d.id = s.id_сотр");
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $stmt->close();
 
-//    /**
-//     * Получение пользователя по username
-//     * @param $username
-//     * @return mixed
-//     */
-//    public function getUserByName($username)
-//    {
-//        $stmt = $this->con->prepare("SELECT * FROM users WHERE username =?");
-//        $stmt->bind_param("s", $username);
-//        $stmt->execute();
-//        $user = $stmt->get_result()->fetch_assoc();
-//        $stmt->close();
-//
-//        $response['error'] = false;
-//        $response['message'] = REQUEST_OK;
-//        $response['response'] = array();
-//
-//        $temp = array();
-//        $temp['id'] = $user['id'];
-//        $temp['id_user'] = $user['id_user'];
-//        $temp['id_center'] = $user['id_centr'];
-//        $temp['full_name'] = $user['fullname'];
-//        $temp['username'] = $user['username'];
-//        $temp['phone'] = $user['phone'];
-//        $temp['phone_key'] = $user['phone_key'];
-//        $temp['fb_key'] = $user['fb_key'];
-//        $temp['token'] = $user['token'];
-//        array_push($response['response'], $temp);
-//
-//        return $response;
-//    }
-//
-//    /**
-//     * Получение доктора по username
-//     * @param $username
-//     * @return mixed
-//     */
-//    public function getDoctorByName($username)
-//    {
-//        $stmt = $this->con->prepare("SELECT * FROM doctors WHERE username =?");
-//        $stmt->bind_param("s", $username);
-//        $stmt->execute();
-//        $user = $stmt->get_result()->fetch_assoc();
-//        $stmt->close();
-//
-//        $response['error'] = false;
-//        $response['message'] = REQUEST_OK;
-//        $response['response'] = array();
-//
-//        $temp = array();
-//        $temp['id_doctor'] = $user['id_doctor'];
-//        $temp['id_doc_center'] = $user['id_doc_centr'];
-//        $temp['id_center'] = $user['id_centr'];
-//        $temp['full_name'] = $user['fullname'];
-//        $temp['photo'] = $user['photo'];
-//        $temp['expr'] = $user['expr'];
-//        $temp['info'] = $user['info'];
-//        $temp['specialty'] = $user['specialty'];
-//        $temp['username'] = $user['username'];
-//        $temp['fb_key'] = $user['fb_key'];
-//        $temp['token'] = $user['token'];
-//        array_push($response['response'], $temp);
-//
-//        return $response;
-//    }
+        $response = array();
+        $response["error"] = false;
+        $response["message"] = REQUEST_OK;
+        $response["response"] = array();
+
+        while ($row = $result->fetch_assoc())
+        {
+            $temp = array();
+            $temp["id_doctor"] = $row["id"];
+            $temp["full_name"] = $row["ФИО"];
+            $temp["id_spec"] = $row["id_спец"];
+
+            $stmt = $this->con->prepare("SELECT Специальности FROM специальности WHERE id = ?");
+            $stmt -> bind_param('i', $row["id_спец"]);
+            $stmt->execute();
+
+            $temp["specialty"] = $row["Специальности"];
+            array_push($response['response'], $temp);
+        }
+        return $response;
+    }
+
+    /**
+     * Получение доктора id
+     * @param $id_doctor
+     * @return mixed
+     */
+    public function getDoctorById($id_doctor)
+    {
+        $stmt = $this->con->prepare("SELECT d.id, d.ФИО FROM сотрудники_инф AS d WHERE s.id = ?");
+        $stmt->bind_param("i", $id_doctor);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $stmt->close();
+
+        $response = array();
+
+        while ($row = $result->fetch_assoc())
+        {
+            $temp = array();
+            $temp["id_doctor"] = $row["id"];
+            $temp["full_name"] = $row["ФИО"];
+
+            array_push($response['response'], $temp);
+        }
+        return $response;
+    }
 
     /**
      * Получение списка докторов по услуге
      * @param $id_service
      * @return mixed
      */
-
-//сотрудники_инф
-//Структура таблицы: id, ФИО, Фамилия, Имя, Отчество, работает (да,нет,уволен)
-
-
-    public function getDoctorByService($id_service)
+   public function getDoctorByService($id_service)
     {
-        $stmt = $this->con->prepare("SELECT d.specialty, d.fullname, s.id_doctor, s.id_service FROM doctors AS d, service_doctor AS s 
-                                            WHERE s.id_service =? AND s.id_doctor = d.id_doctor GROUP BY d.id_doctor");
+        $stmt = $this->con->prepare("SELECT d.id, d.ФИО, s.id_специал FROM сотрудники_инф AS d, сотрудники_услуги AS s 
+                                            WHERE s.id_услуги = ? AND d.id = s.id_сотрудника");
         $stmt->bind_param("i", $id_service);
         $stmt->execute();
         $result = $stmt->get_result();
@@ -132,417 +96,29 @@ class mhOperation
         while ($row = $result->fetch_assoc())
         {
             $temp = array();
-            $temp['id_doctor'] = $row['id_doctor'];
-            $temp['specialty'] = $row['specialty'];
-            $temp['full_name'] = $row['fullname'];
-            $temp['id_service'] = $row['id_service'];
-            array_push($response, $temp);
-        }
-
-        return $response;
-    }
-
-    /**
-     * Получение пользователя по id
-     * @param $id
-     * @return mixed
-     */
-    public function getUserById($id)
-    {
-        $stmt = $this->con->prepare("SELECT * FROM users WHERE id=?");
-        $stmt->bind_param("i", $id);
-        $stmt->execute();
-        $user = $stmt->get_result()->fetch_assoc();
-        $stmt->close();
-
-        $response['error'] = false;
-        $response['message'] = array(REQUEST_OK);
-        $response['response'] = array();
-
-        $temp = array();
-        $temp['id'] = $user['id'];
-        $temp['id_user'] = $user['id_user'];
-        $temp['id_center'] = $user['id_centr'];
-        $temp['fullname'] = $user['fullname'];
-        $temp['username'] = $user['username'];
-        $temp['phone'] = $user['phone'];
-        $temp['phone_key'] = $user['phone_key'];
-        $temp['fb_key'] = $user['fb_key'];
-        $temp['token'] = $user['token'];
-
-        return $response;
-    }
-
-    /**
-     * Получение всех медицинских центров
-     * @return array
-     */
-    public function getCentres()
-    {
-        $stmt = $this->con->prepare("SELECT id, id_centr, title FROM centrs");
-        $stmt->execute();
-        $result = $stmt->get_result();
-        $stmt->close();
-
-        $response = array();
-        $response['error'] = false;
-        $response['message'] = REQUEST_OK;
-        $response['response'] = array();
-
-        while ($row = $result->fetch_assoc())
-        {
-            $temp = array();
-            $temp['id'] = $row['id'];
-            $temp['id_center'] = $row['id_centr'];
-            $temp['title'] = $row['title'];
-            array_push($response['response'], $temp);
-        }
-
-        return $response;
-    }
-
-    /**
-     * Получение медицинкого центра по ID
-     * @param $id
-     * @return array
-     */
-    public function getCenterById($id)
-    {
-        $stmt = $this->con->prepare("SELECT * FROM centrs WHERE id=?");
-        $stmt->bind_param("i", $id);
-        $stmt->execute();
-        $result = $stmt->get_result()->fetch_assoc();
-        $stmt->close();
-
-        $response = array();
-
-        $response["error"] = false;
-        $response["message"] = REQUEST_OK;
-        $response["response"] = array();
-        $temp['id'] = $result['id'];
-        $temp['id_center'] = $result['id_centr'];
-        $temp['title'] = $result['title'];
-        $temp['info'] = $result['info'];
-        $temp['logo'] = $result['logo'];
-        $temp['site'] = $result['site'];
-        $temp['phone'] = $result['phone'];
-        $temp['address'] = $result['address'];
-        array_push($response['response'], $temp);
-
-        return $response;
-    }
-
-    /**
-     * Получение списка специальностей по id клиники
-     * @param $id_center
-     * @return array
-     */
-    public function getCategoryByCenter($id_center)
-    {
-        $stmt = $this->con->prepare("SELECT id, id_spec, title FROM specialty WHERE id_centr =?");
-        $stmt->bind_param("i", $id_center);
-        $stmt->execute();
-        $result = $stmt->get_result();
-        $stmt->close();
-
-        $response = array();
-        $response['error'] = false;
-        $response['message'] = REQUEST_OK;
-        $response['response'] = array();
-
-        while ($row = $result->fetch_assoc())
-        {
-            $temp = array();
-            $temp["id"] = $row["id"];
-            $temp["id_spec"] = $row["id_spec"];
-            $temp["title"] = $row["title"];
-            array_push($response['response'], $temp);
-        }
-
-        return $response;
-    }
-
-    /**
-     * Получение списка специальностей по id доктора
-     * @param $id_center
-     * @param $id_doctor
-     * @return array
-     */
-    public function getCategoryByDoctor($id_center, $id_doctor)
-    {
-        $stmt = $this->con->prepare("SELECT s.id, d.id_spec, s.title FROM service_doctor AS d, specialty AS s 
-                                              WHERE s.id_centr =? AND d.id_doctor =? AND d.id_spec = s.id_spec GROUP BY s.id");
-        $stmt->bind_param("ii", $id_center, $id_doctor);
-        $stmt->execute();
-        $result = $stmt->get_result();
-        $stmt->close();
-
-        $response = array();
-
-        while ($row = $result->fetch_assoc())
-        {
-            $temp = array();
-            $temp["id"] = $row["id"];
-            $temp["id_spec"] = $row["id_spec"];
-            $temp["title"] = $row["title"];
-            array_push($response, $temp);
-        }
-        return $response;
-    }
-
-    /**
-     * Получение всех сотрудников по id клиники
-     * @param $id_center
-     * @return array
-     */
-    public function getDoctorByCenter($id_center)
-    {
-        $stmt = $this->con->prepare("SELECT d.`id_doctor`, d.`fullname`, d.`specialty` AS id_spec, s.title 
-                                              AS specialty FROM doctors AS d, specialty AS s WHERE d.`id_centr`=? 
-                                              AND d.specialty = s.id");
-        $stmt->bind_param("i", $id_center);
-        $stmt->execute();
-        $result = $stmt->get_result();
-        $stmt->close();
-
-        $response = array();
-        $response["error"] = false;
-        $response["message"] = REQUEST_OK;
-        $response["response"] = array();
-
-        while ($row = $result->fetch_assoc())
-        {
-            $temp = array();
-            $temp["id_doctor"] = $row["id_doctor"];
-            $temp["full_name"] = $row["fullname"];
-            $temp["id_spec"] = $row["id_spec"];
-            $temp["specialty"] = $row["specialty"];
-            array_push($response['response'], $temp);
-        }
-
-        return $response;
-    }
-
-    /**
-     * Получение конкретного сотрудника по ID
-     * @param $id_center
-     * @param $id
-     * @return array
-     */
-    public function getDoctorById($id_center, $id)
-    {
-        $stmt = $this->con->prepare("SELECT d.*, s.title AS specialty FROM doctors AS d, specialty AS s 
-                                              WHERE d.id_centr=? AND d.id_doctor=? AND s.id=d.specialty");
-        $stmt->bind_param("ii", $id_center, $id);
-        $stmt->execute();
-        $result = $stmt->get_result()->fetch_assoc();
-        $stmt->close();
-
-        $response = array();
-
-        $response["error"] = false;
-        $response["message"] = REQUEST_OK;
-        $response["response"] = array();
-
-        $temp["id_doctor"] = $result["id_doctor"];
-        $temp["id_doctor_center"] = $result["id_doc_centr"];
-        $temp["id_center"] = $result["id_centr"];
-        $temp["full_name"] = $result["fullname"];
-        $temp["photo"] = $result["photo"];
-        $temp["expr"] = $result["expr"];
-        $temp["info"] = $result["info"];
-        $temp["specialty"] = $result["specialty"];
-        $temp["fb_key"] = $result["fb_key"];
-        array_push($response["response"], $temp);
-
-        return $response;
-    }
-
-//    /**
-//     * Получение всех услуг клиники
-//     * @param $id_center
-//     * @return array
-//     */
-//
-//Наименование таблицы: прейскурант
-//Структура таблицы: id_услуги, id_специал, Наименование, Цена, Время_приема, arxiv
-//
-//
-//    public function getServiceByCenter($id_center)
-//    {
-//        $stmt = $this->con->prepare("SELECT * FROM `прейскурант`");
-//        $stmt->bind_param("i", $id_center);
-//        $stmt->execute();
-//        $result = $stmt->get_result();
-//        $stmt->close();
-//
-//        $response = array();
-//        $response['error'] = false;
-//        $response["message"] = REQUEST_OK;
-//        $response['response'] = array();
-//
-//        while ($row = $result->fetch_assoc())
-//        {
-//            $temp = array();
-//            $temp["id"] = $row["id"];
-//            $temp["id_service"] = $row["id_услуги"];
-//            $temp["id_spec"] = $row["id_специал"];
-//            $temp["admission"] = $row["Время_приема"];
-//            $temp["value"] = $row["Цена"];
-//            $temp["title"] = $row["Наименование"];
-//            $temp["archive"] = $row["arxiv"];
-//            array_push($response["response"], $temp);
-//        }
-//
-//        return $response;
-//    }
-
-    /**
-     * Получение всех услуг клиники
-     * @param $id_doctor
-     * @return array
-     */
-    public function getServiceByDoctor($id_doctor)
-    {
-        $stmt = $this->con->prepare("SELECT * FROM `прейскурант` AS p, service_doctor AS s WHERE p.id_centr=? 
-                                              AND s.id_doctor =? AND p.id_service = s.id_service GROUP BY p.id_service");
-        $stmt->bind_param("ii", $id_center, $id_doctor);
-        $stmt->execute();
-        $result = $stmt->get_result();
-        $stmt->close();
-
-        $response = array();
-
-        while ($row = $result->fetch_assoc())
-        {
-            $temp = array();
-            $temp["id"] = $row["id"];
-            $temp["id_service"] = $row["id_service"];
-            $temp["id_spec"] = $row["id_spec"];
-            $temp["admission"] = $row["admission"];
-            $temp["value"] = $row["value"];
-            $temp["title"] = $row["title"];
-            array_push($response, $temp);
-        }
-
-        return $response;
-    }
-
-    /**
-     * Получение списка акций клиники
-     * @param $id_center
-     * @param $dt
-     * @return array
-     */
-    public function getSaleByCenter($id_center, $dt)
-    {
-        $stmt = $this->con->prepare("SELECT * FROM `sale` WHERE id_centr=? AND STR_TO_DATE(date_end, 'dd.mm.yyyy') > STR_TO_DATE(?, 'dd.mm.yyyy')");
-        $stmt->bind_param("is", $id_center, $dt);
-        $stmt->execute();
-        $result = $stmt->get_result();
-        $stmt->close();
-
-        $response = array();
-
-        while ($row = $result->fetch_assoc())
-        {
-            $temp = array();
-            $temp["id_sale"] = $row["id_sale"];
-            $temp["id_center"] = $row["id_centr"];
-            $temp["sale_image"] = $row["sale_image"];
-            $temp["sale_description"] = $row["sale_description"];
-            array_push($response["response"], $temp);
-        }
-
-        return $response;
-    }
-
-    /**
-     * Получение услуг по специальности
-     * @param $id_spec
-     * @return array
-     */
-
-    //
-//Наименование таблицы: прейскурант
-//Структура таблицы: id_услуги, id_специал, Наименование, Цена, Время_приема, arxiv
-//
-
-    public function getServiceBySpecialty($id_spec)
-    {
-        $stmt = $this->con->prepare("SELECT * FROM прейскурант WHERE id_специал=?");
-        $stmt->bind_param("i", $id_spec);
-        $stmt->execute();
-        $result = $stmt->get_result();
-        $stmt->close();
-
-        $response = array();
-        $response['error'] = false;
-        $response["message"] = REQUEST_OK;
-        $response['response'] = array();
-
-        while ($row = $result->fetch_assoc())
-        {
-            $temp = array();
-            $temp["id"] = $row["id"];
-            $temp["id_service"] = $row["id_услуги"];
+            $temp["id_doctor"] = $row["id"];
+            $temp["full_name"] = $row["ФИО"];
             $temp["id_spec"] = $row["id_специал"];
-            $temp["admission"] = $row["admission"];
-            $temp["value"] = $row["value"];
-            $temp["title"] = $row["title"];
-            array_push($response["response"], $temp);
-        }
 
-        return $response;
-    }
+            $stmt = $this->con->prepare("SELECT Специальности FROM специальности WHERE id = ?");
+            $stmt -> bind_param('i', $row["id_специал"]);
+            $stmt->execute();
 
-    /**
-     * Получение рассписания сотрудника по id сотрудника
-     * @param $id_center
-     * @param $id_doctor
-     * @return array
-     */
-    public function getScheduleByDoctor($id_center, $id_doctor)
-    {
-        $stmt = $this->con->prepare("SELECT * FROM  schedule WHERE id_centr=? AND id_doctor=? ORDER BY adm_date DESC");
-        $stmt->bind_param("ii", $id_center, $id_doctor);
-        $stmt->execute();
-        $result = $stmt->get_result();
-        $stmt->close();
-
-        $response = array();
-        $response['error'] = false;
-        $response['response'] = array();
-
-        while ($row = $result->fetch_assoc())
-        {
-            $temp = array();
-            $temp["id"] = $row["id"];
-            $temp["adm_date"] = $row["adm_date"];
-            $temp["adm_time"] = $row["adm_time"];
-            $temp["id_spec"] = $row["id_spec"];
-            $temp["id_service"] = $row["id_service"];
-            $temp["id_doctor"] = $row["id_doctor"];
-            $temp["title"] = $row["title"];
-            $temp["value"] = $row["value"];
-            $temp["admission"] = $row["admission"];
-            $temp["state"] = $row["state"];
+            $temp["specialty"] = $row["Наименование"];
             array_push($response['response'], $temp);
         }
-
         return $response;
     }
 
     /**
      * Получение списка сотрудников по специальности
-     * @param $id_center
      * @param $id_spec
      * @return array
      */
-    public function getDoctorBySpec($id_center, $id_spec)
+    public function getDoctorBySpec($id_spec)
     {
         $stmt = $this->con->prepare("SELECT * FROM  doctors WHERE id_centr=? AND specialty=?");
-        $stmt->bind_param("ii", $id_center, $id_spec);
+        $stmt->bind_param("i", $id_spec);
         $stmt->execute();
         $result = $stmt->get_result();
         $stmt->close();
@@ -569,226 +145,144 @@ class mhOperation
     }
 
     /**
-     * Получение рассписания по специальности
-     * @param $id_center
-     * @param $id_service
+     * Получение списка специальностей центра
      * @return array
      */
-    public function getScheduleByService($id_center, $id_service)
+    public function getAllSpecialty()
     {
-        $stmt = $this->con->prepare("SELECT * FROM  schedule WHERE id_centr=? AND id_service=? 
-                                                ORDER BY adm_date DESC");
-        $stmt->bind_param("ii", $id_center, $id_service);
+        $stmt = $this->con->prepare("SELECT id, Специальности FROM специальности");
         $stmt->execute();
         $result = $stmt->get_result();
         $stmt->close();
 
         $response = array();
         $response['error'] = false;
-        $response["message"] = REQUEST_OK;
+        $response['message'] = REQUEST_OK;
         $response['response'] = array();
 
         while ($row = $result->fetch_assoc())
         {
             $temp = array();
-            $temp["id"] = $row["id"];
-            $temp["adm_date"] = $row["adm_date"];
-            $temp["adm_time"] = $row["adm_time"];
-            $temp["id_spec"] = $row["id_spec"];
-            $temp["id_service"] = $row["id_service"];
-            $temp["id_doctor"] = $row["id_doctor"];
-            $temp["title"] = $row["title"];
-            $temp["value"] = $row["value"];
-            $temp["admission"] = $row["admission"];
-            $temp["state"] = $row["state"];
+            $temp["id_spec"] = $row["id"];
+            $temp["title"] = $row["Специальности"];
             array_push($response['response'], $temp);
         }
-
         return $response;
     }
 
     /**
-     * Получение списка всех посещений медицинского центра
-     * @param $id_user
+     * Получение списка специальностей по id доктора
+     * @param $id_doctor
      * @return array
      */
-
-    //Наименование таблицы: прейскурант
-//Структура таблицы: id_услуги, id_специал, Наименование, Цена, Время_приема, arxiv
-
-    public function getVisits($id_user)
+    public function getSpecialtyByDoctor($id_doctor)
     {
-        $stmt = $this->con->prepare("SELECT r.id AS id_schedule, r.adm_date, r.adm_time, r.state, p.title, s.fullname, s.photo
-        FROM `schedule` r, `doctors` s, `price` p
-        WHERE r.`id_centr` = ?
-        AND r.`id_user` = ?
-        GROUP BY r.id");
-        $stmt->bind_param("i", $id_user);
+        $stmt = $this->con->prepare("SELECT d.id_спец, s.title FROM сотрудники_специальность AS d, специальности AS s 
+                                              WHERE d.id_сотр =? AND d.id_спец = s.id GROUP BY d.id_spec");
+        $stmt->bind_param("i", $id_doctor);
         $stmt->execute();
         $result = $stmt->get_result();
         $stmt->close();
 
         $response = array();
-        $response['error'] = false;
-        $response["message"] = REQUEST_OK;
-        $response['response'] = array();
 
         while ($row = $result->fetch_assoc())
         {
             $temp = array();
-            $temp["id_schedule"] = $row["id_schedule"];
-            $temp["adm_date"] = $row["adm_date"];
-            $temp["adm_time"] = $row["adm_time"];
-            $temp["full_name"] = $row["fullname"];
-            $temp["state"] = $row["state"];
+            $temp["id_spec"] = $row["id"];
             $temp["title"] = $row["title"];
-            $temp["photo"] = $row["photo"];
-
-            array_push($response['response'], $temp);
-        }
-
-        return $response;
-    }
-
-    /**
-     * Получение списка неподтвержденных посещений медицинского центра
-     * @param $id_center
-     * @param $id_user
-     * @return bool|mysqli_result
-     */
-
-
-    //Наименование таблицы: прейскурант
-//Структура таблицы: id_услуги, id_специал, Наименование, Цена, Время_приема, arxiv
-
-    public function getUnConfirmReceptions($id_center, $id_user)
-    {
-        $stmt = $this->con->prepare("SELECT r.adm_date, r.adm_time, r.state, p.title, s.fullname, s.photo
-        FROM `schedule` r, `doctors` s, `price` p
-        WHERE r.`id_centr` = ?
-        AND r.`id_user` = ?
-        AND r.id_service = p.id_service
-        AND r.id_doctor = s.id_doctor
-        AND r.state = 'wait'");
-        $stmt->bind_param("ii", $id_center, $id_user);
-        $stmt->execute();
-        $visits = $stmt->get_result();
-        $stmt->close();
-        return $visits;
-    }
-
-    /**
-     * Получение завершенного списка посещений медицинского центра
-     * @param $id_center
-     * @param $id_user
-     * @return bool|mysqli_result
-     */
-
-    //Наименование таблицы: прейскурант
-//Структура таблицы: id_услуги, id_специал, Наименование, Цена, Время_приема, arxiv
-
-
-    public function getOldReceptions($id_center, $id_user)
-    {
-        $stmt = $this->con->prepare("SELECT r.adm_date, r.adm_time, r.state, p.title, s.fullname, s.photo
-        FROM `schedule` r, `doctors` s, `price` p
-        WHERE r.`id_centr` = ?
-        AND r.`id_user` = ?
-        AND r.id_service = p.id_service
-        AND r.id_doctor = s.id_doctor
-        AND (r.state = 'false' OR r.state = 'complete')
-        ");
-        $stmt->bind_param("ii", $id_center, $id_user);
-        $stmt->execute();
-        $visits = $stmt->get_result();
-        $stmt->close();
-        return $visits;
-    }
-
-    /**
-     * Получение незавершенного списка посещений медицинского центра
-     * @param $id_center
-     * @param $id_user
-     * @return bool|mysqli_result
-     */
-
-//Наименование таблицы: прейскурант
-//Структура таблицы: id_услуги, id_специал, Наименование, Цена, Время_приема, arxiv
-
-    public function getNewReceptions($id_center, $id_user)
-    {
-        $stmt = $this->con->prepare("SELECT r.adm_date, r.adm_time, r.state, p.title, s.fullname, s.photo
-        FROM `schedule` r, `doctors` s, `price` p
-        WHERE r.`id_centr` = ?
-        AND r.`id_user` = ?
-        AND r.id_service = p.id_service
-        AND r.state != 'false'");
-        $stmt->bind_param("ii", $id_center, $id_user);
-        $stmt->execute();
-        $visits = $stmt->get_result();
-        $stmt->close();
-        return $visits;
-    }
-
-    /**
-     * Получение отзывов о приложении
-     * @param $id
-     * @return array
-     */
-    public function getReview($id)
-    {
-        $stmt = $this->con->prepare("SELECT * FROM review WHERE id > ?");
-        $stmt->bind_param("i", $id);
-        $stmt->execute();
-        $review = $stmt->get_result();
-        $stmt->close();
-        $response = array();
-        while ($row = $review->fetch_assoc())
-        {
-            $temp = array();
-            $temp["id"] = $row["id"];
-            $temp["id_user"] = $row["id_user"];
-            $temp["star"] = $row["star"];
-            $temp["description"] = $row["description"];
             array_push($response, $temp);
         }
         return $response;
     }
 
     /**
-     * Отправить отзыв о приложении
-     * @param $id_user
-     * @param $desc
-     * @param $star
-     * @return bool|mysqli_result
+     * Получение списка услуг центра
+     * @return array
      */
-    public function sendReview($id_user, $desc, $star)
+    public function getAllService()
     {
-        $stmt = $this->con->prepare("INSERT INTO `db_chat`.`review` (`id`, `description`, `star`, `id_user`) 
-                                            VALUES (NULL, ?, ?, ?)");
-        $stmt->bind_param("sii", $desc, $star, $id_user);
+        $stmt = $this->con->prepare("SELECT * FROM прейскурант");
         $stmt->execute();
-        $review = $stmt->get_result();
+        $result = $stmt->get_result();
         $stmt->close();
-        return $review;
+
+        $response = array();
+        $response['error'] = false;
+        $response["message"] = REQUEST_OK;
+        $response['response'] = array();
+
+        while ($row = $result->fetch_assoc())
+        {
+            $temp = array();
+            $temp["id_service"] = $row["id_услуги"];
+            $temp["id_spec"] = $row["id_специал"];
+            $temp["admission"] = $row["Время _приема"];
+            $temp["value"] = $row["Цена"];
+            $temp["title"] = $row["Наименование"];
+            array_push($response["response"], $temp);
+        }
+        return $response;
     }
 
     /**
-     * Отправить ответ на отзыв о приложении
-     * @param $id_user
-     * @param $desc
-     * @param $star
-     * @return bool|mysqli_result
+     * Получение списка услуг специалиста
+     * @param $id_doctor
+     * @return array
      */
-    public function sendReviewAnswer($id_user, $desc, $star)
+    public function getServiceByDoctor($id_doctor)
     {
-        $stmt = $this->con->prepare("INSERT INTO `db_chat`.`review` (`id`, `description`, `star`, `id_user`) 
-                                            VALUES (NULL, ?, ?, ?)");
-        $stmt->bind_param("sii", $desc, $star, $id_user);
+        $stmt = $this->con->prepare("SELECT * FROM `прейскурант` AS p, сотрудники_услуги AS s WHERE
+                                            s.id_сотрудника =? AND p.id_услуги = s.id_услуги GROUP BY p.id_услуги");
+        $stmt->bind_param("i", $id_doctor);
         $stmt->execute();
-        $review = $stmt->get_result();
+        $result = $stmt->get_result();
         $stmt->close();
-        return $review;
+
+        $response = array();
+
+        while ($row = $result->fetch_assoc())
+        {
+            $temp = array();
+            $temp["id_service"] = $row["id_услуги"];
+            $temp["id_spec"] = $row["id_специал"];
+            $temp["admission"] = $row["Время _приема"];
+            $temp["value"] = $row["Цена"];
+            $temp["title"] = $row["Наименование"];
+            array_push($response["response"], $temp);
+        }
+        return $response;
+    }
+
+    /**
+     * Получение списка услуг по специальности
+     * @param $id_spec
+     * @return array
+     */
+    public function getServiceBySpecialty($id_spec)
+    {
+        $stmt = $this->con->prepare("SELECT * FROM прейскурант WHERE id_специал=?");
+        $stmt->bind_param("i", $id_spec);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $stmt->close();
+
+        $response = array();
+        $response['error'] = false;
+        $response["message"] = REQUEST_OK;
+        $response['response'] = array();
+
+        while ($row = $result->fetch_assoc())
+        {
+            $temp = array();
+            $temp["id_service"] = $row["id_услуги"];
+            $temp["id_spec"] = $row["id_специал"];
+            $temp["admission"] = $row["Время _приема"];
+            $temp["value"] = $row["Цена"];
+            $temp["title"] = $row["Наименование"];
+            array_push($response["response"], $temp);
+        }
+        return $response;
     }
 
     /**
@@ -798,7 +292,7 @@ class mhOperation
      * @param $adm
      * @return array|string
      */
-    public function getRecordForDate($date, $id_doctor, $adm)
+    public function getRecordByDate($date, $id_doctor, $adm)
     {
         $stmt = $this->con->prepare("SELECT `Время_приема`,`id_клиента` FROM `raspisanie_sotr`
                                             WHERE `Дата_приема` = ? AND `id_сотрудника` = ? ORDER BY `Время_приема` ASC");
@@ -833,7 +327,6 @@ class mhOperation
                         array_push($reception_status, $item['status']);
                     } else
                     {
-
                         $item['status'] = 'занято';
                         array_push($reception_status, $item['status']);
                     }
@@ -877,7 +370,6 @@ class mhOperation
         return NO_WORK;
     }
 
-
     /**
      * Запись пациента на прием
      * @param $id_sotr
@@ -887,7 +379,7 @@ class mhOperation
      * @param $id_spec
      * @param $id_ysl
      */
-    public function recording($id_sotr, $data, $time_zap, $id_kl, $id_spec, $id_ysl, $dlit)
+    public function recordClient($id_sotr, $data, $time_zap, $id_kl, $id_spec, $id_ysl, $dlit)
     {
         $stmt = $this->con->prepare("SELECT COUNT(Время_приема) AS adm_time FROM `raspisanie_sotr` WHERE `Дата_приема` = ? 
                                       AND `Время_приема` = ? AND `id_сотрудника` = ?");
@@ -1014,11 +506,44 @@ class mhOperation
     }
 
     /**
+     * Получение списка посещений по id_клиента
+     * @param $id_клиента
+     * @return array
+     */
+    public function getVisitsByClient($id_клиента)
+    {
+        $stmt = $this->con->prepare("SELECT * FROM raspisanie_sotr WHERE id_клиента=? ORDER BY Статус_приема");
+        $stmt->bind_param("i", $id_клиента);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $stmt->close();
+
+        $response = array();
+        $response['error'] = false;
+        $response["message"] = REQUEST_OK;
+        $response['response'] = array();
+
+        while ($row = $result->fetch_assoc())
+        {
+            $temp = array();
+            $temp["id_doctor"] = $row["id_сотрудника"];
+            $temp["id_client"] = $row["id_клиента"];
+            $temp["id_service"] = $row["id_услуги"];
+            $temp["id_specialty"] = $row["id_специал"];
+            $temp["adm_date"] = $row["Дата_приема"];
+            $temp["adm_time"] = $row["Время_приема"];
+            $temp["status"] = $row["Статус_приема"];
+            $temp["call"] = $row["obzvon"];
+            array_push($response["response"], $temp);
+        }
+        return $response;
+    }
+
+    /**
      * Получение даты с сервера
      * @return array
      */
-    public
-    function getDateCurrent()
+    public function getCurrentDate()
     {
         $date = date("d.m.Y");
         $day = date("w");
@@ -1034,7 +559,6 @@ class mhOperation
             "week_day" => $day,
             "last_monday" => $monday
         ];
-
         return $message;
     }
 }

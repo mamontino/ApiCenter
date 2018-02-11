@@ -21,5 +21,4 @@ class Notification
         $res['Notification']['message'] = $this->message;
         return $res;
     }
-
 }
